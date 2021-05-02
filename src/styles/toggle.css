@@ -1,0 +1,76 @@
+.switch-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.switch-label {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+
+  cursor: pointer;
+  font-weight: 500;
+  text-align: left;
+
+  padding: 0 0 0 54px;
+}
+
+.switch-label + input[type="text"] {
+  margin-top: 1rem;
+}
+
+.switch-label:before,
+.switch-label:after {
+  content: "";
+  position: absolute;
+  margin: 0;
+  outline: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: all 0.15s ease;
+}
+.switch-label:before {
+  left: 1px;
+  width: 34px;
+  height: 14px;
+  background-color: var(--main-color-light);
+  border-radius: 8px;
+}
+.switch-label:after {
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #fafafa;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.14),
+    0 2px 2px 0 rgba(0, 0, 0, 0.098), 0 1px 5px 0 rgba(0, 0, 0, 0.084);
+}
+
+.switch-input:checked + .switch-label:before {
+  background-color: var(--main-color-light);
+}
+.switch-input:checked + .switch-label:after {
+  background-color: var(--main-color);
+  transform: translate(80%, -50%);
+}
+
+.switch-label:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.switch-input:focus + .switch-label:after {
+  border: 2px solid var(--main-color);
+}
+
+.switch-label:focus:after {
+  background-color: white;
+}

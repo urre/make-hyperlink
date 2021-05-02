@@ -1,0 +1,70 @@
+.alertbox {
+  background-color: #ffffff;
+
+  border-radius: 8px;
+  padding: 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  line-height: 1.75;
+
+  position: relative;
+}
+
+.alertbox:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  z-index: 1;
+}
+
+.alertbox span {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  display: block;
+  margin-bottom: 1rem;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    80deg,
+    var(--main-color),
+    var(--main-color-accent)
+  );
+}
+
+body.dark .alertbox {
+  background-image: none;
+  background-color: transparent;
+
+  background-color: #1c0c29;
+}
+
+.alertbox code {
+  line-height: 1;
+  color: var(--main-color);
+}
+
+body.dark .alertbox code {
+  color: var(--main-color);
+}
+
+kbd {
+  border: 1px solid #aaa;
+  border-radius: 0.2em;
+  box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  color: #000;
+  padding: 0.1em 0.3em;
+  font-family: inherit;
+  font-size: 0.85em;
+}
+
+body.dark kbd {
+  background-color: #111;
+  border: 1px solid #666;
+  color: #ccc;
+}

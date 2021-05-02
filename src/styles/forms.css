@@ -1,0 +1,93 @@
+label {
+  line-height: 2;
+}
+
+input[type="text"] {
+  font-family: inherit;
+  font-size: inherit;
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  transition: border 300ms;
+}
+
+input[type="text"]:focus {
+  border: 1px solid #eaeaea;
+}
+
+body.dark input[type="text"] {
+  color: #ccc;
+  border: 1px solid #ccc;
+  background-color: transparent;
+}
+
+select {
+  width: 100%;
+  padding: 0.5rem 16px 0.5rem 0.5rem;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 36px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 3px;
+  background-color: white;
+  background-size: 12px;
+  background-position: calc(100% - 8px) 50%;
+  background-repeat: no-repeat;
+  margin-bottom: 1rem;
+}
+
+.inline-form-element {
+  display: inline-flex;
+  width: 200px;
+  margin-left: 1rem;
+}
+
+summary {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 2;
+  cursor: pointer;
+
+  user-select: none;
+
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em 1rem;
+  border-radius: 4px;
+}
+
+details code {
+  font-size: 1rem;
+}
+
+details {
+  border: 1px solid rgb(194, 194, 194);
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+  margin-bottom: 0.5rem;
+}
+
+details[open] {
+  background-color: white;
+}
+
+body.dark details[open] {
+  background-color: #1c0c29;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 2;
+}
+
+.chevron {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

@@ -1,0 +1,54 @@
+.aside {
+  overflow: hidden;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: white;
+  overflow-y: auto;
+  height: calc(100vh);
+}
+
+@media (min-width: 60em) {
+  .aside {
+    display: block;
+    width: 420px;
+  }
+}
+
+.aside-active {
+  display: block;
+}
+
+.aside p {
+  font-size: 0.75rem;
+  margin-top: 0;
+}
+
+.aside select + ul {
+  font-size: 0.75rem;
+}
+
+body.dark .aside {
+  background-color: #191321;
+}
+
+.aside header {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+  padding: 0.5rem;
+}
+
+@media (min-width: 60em) {
+  .aside header {
+    display: none;
+  }
+}
+
+.aside-inner {
+  padding: 2.5rem;
+}

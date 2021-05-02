@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+/*
+html {
+  height: 100%;
+} */
+
+#root {
+  height: 100%;
+  max-height: calc(100vh - 4rem);
+  height: calc(100vh - 4rem);
+}
+
+:root {
+  --main-color: #9e0b92;
+  --main-color-darkmode: #b358ab;
+  --main-color-border-darkmode: #912e88;
+  --main-color-light: rgb(205, 111, 243);
+  --main-color-alert: rgb(237, 210, 248);
+  --main-color-accent: hotpink;
+  --text-color: #474747;
+  --success: #5dd884;
+}
+
+body {
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color);
+  background-color: rgb(255, 246, 245);
+  padding: 1rem;
+}
+
+@media (min-width: 60em) {
+  body {
+    padding: 2rem;
+  }
+}
+
+body.dark {
+  color: #ccc;
+  background-color: #271337;
+}
+
+h1 {
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    80deg,
+    var(--main-color),
+    var(--main-color-accent)
+  );
+}
+
+.colophon a {
+  text-decoration: none;
+}
+
+.colophon nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.colophon nav .button {
+  display: block;
+}
+
+@media (min-width: 60em) {
+  .colophon nav .button {
+    display: none;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 0.5rem solid rgb(247, 212, 212);
+  border-radius: 20px;
+}
+
+@media (min-width: 60em) {
+  .container {
+    overflow: hidden;
+    max-height: calc(100vh - 4rem);
+    height: calc(100vh - 4rem);
+  }
+}
+
+body.dark .container {
+  border: 0.5rem solid var(--main-color-border-darkmode);
+}
+
+@media (min-width: 60em) {
+  .container {
+    height: 100vh;
+    grid-template-columns: 300px 3fr;
+    grid-gap: 0;
+    margin-right: 420px;
+  }
+}
+
+.colophon {
+  padding: 1.5rem;
+  padding-bottom: 2rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.09);
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+
+.relative {
+  position: relative;
+}

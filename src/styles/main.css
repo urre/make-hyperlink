@@ -1,0 +1,21 @@
+.main {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  overflow-y: auto;
+}
+
+.main-html {
+  padding: 1.5rem;
+}
+
+.main-html-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-html-header h3 {
+  margin: 0;
+}

@@ -1,0 +1,50 @@
+.button {
+  border: none;
+  outline: none;
+  background-color: white;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  font-size: 0.85rem;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 300ms ease, transform 200ms;
+  position: relative;
+}
+
+body.dark .button {
+  background-color: transparent;
+  color: #ccc;
+}
+
+.button:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
+.button:hover * {
+  stroke: white;
+  color: white;
+}
+
+.button:focus {
+  box-shadow: 0 0 0 3px var(--main-color-light);
+  outline: none;
+}
+
+.button:active {
+  top: 1px;
+}
+
+.button-success {
+  background-color: var(--success);
+}
+
+.button-success * {
+  stroke: white;
+}
+
+.button-success:hover {
+  background-color: var(--success);
+}

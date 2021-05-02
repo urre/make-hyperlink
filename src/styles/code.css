@@ -1,0 +1,81 @@
+code,
+pre {
+  font-family: "SF Mono", source-code-pro, Menlo, Monaco, Consolas,
+    "Courier New", monospace;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  word-wrap: normal;
+}
+
+pre[class*="language-"] {
+  /* white-space: pre-wrap; */
+  overflow-x: auto;
+  white-space: pre-line;
+  hyphens: auto;
+  border-radius: 8px;
+  padding: 1rem;
+  /* word-break: break-all; */
+  /* overflow-wrap: break-word; */
+  /* box-shadow: 0px 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0px 6px 30px 5px rgba(0, 0, 0, 0.12), 0px 8px 10px -7px rgba(0, 0, 0, 0.2); */
+}
+
+pre[class*="language-"] {
+  background-color: #733356;
+  background-image: linear-gradient(
+    225deg,
+    #733356 1%,
+    #271337 35%,
+    #02070c 100%
+  );
+}
+
+code {
+  /* color: white; */
+
+  /* background-color: #111; */
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  /* background-image: linear-gradient(80deg, blue, hotpink); */
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  line-height: 2;
+}
+
+/* HTML */
+.main pre .token.tag,
+.main pre .token.attr-name,
+.main pre .token.namespace,
+.main pre .token.deleted {
+  color: #feebc8;
+}
+
+.main pre .token.string,
+.main pre .token.char,
+.main pre .token.attr-value,
+.main pre .token.regex,
+.main pre .token.variable {
+  color: var(--main-color-light);
+}
+
+.main code[class*="language-"],
+.main pre[class*="language-"] {
+  font-size: 1.15rem;
+  font-family: "SF Mono", Roboto-Mono, Inconsolata, Monaco, Consolas,
+    Courier New, Courier, monospace;
+  line-height: 1.5;
+  color: white;
+  text-shadow: none;
+
+  white-space: pre-wrap;
+  overflow-x: auto;
+  white-space: normal;
+  hyphens: auto;
+
+  word-break: break-word;
+  overflow-wrap: break-word;
+  tab-size: 4;
+  letter-spacing: -0.02em;
+}

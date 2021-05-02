@@ -1,0 +1,7 @@
+a {
+  color: var(--main-color);
+}
+
+body.dark a {
+  color: var(--main-color-darkmode);
+}
