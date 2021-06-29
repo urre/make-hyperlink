@@ -1,10 +1,6 @@
 * {
   box-sizing: border-box;
 }
-/*
-html {
-  height: 100%;
-} */
 
 #root {
   height: 100%;
@@ -13,14 +9,15 @@ html {
 }
 
 :root {
+  --bg-color: rgb(255, 246, 245);
   --main-color: #9e0b92;
   --main-color-darkmode: #b358ab;
   --main-color-border-darkmode: #912e88;
-  --main-color-light: rgb(205, 111, 243);
+  --main-color-light: rgb(243, 111, 192);
   --main-color-alert: rgb(237, 210, 248);
   --main-color-accent: hotpink;
   --text-color: #474747;
-  --success: #5dd884;
+  --success: hotpink;
 }
 
 body {
@@ -31,13 +28,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-color);
-  background-color: rgb(255, 246, 245);
+  background-color: var(--bg-color);
   padding: 1rem;
 }
 
 @media (min-width: 60em) {
   body {
-    padding: 2rem;
+    /* padding: 2rem; */
   }
 }
 
@@ -82,8 +79,6 @@ h1 {
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  border: 0.5rem solid rgb(247, 212, 212);
-  border-radius: 20px;
 }
 
 @media (min-width: 60em) {
@@ -92,10 +87,6 @@ h1 {
     max-height: calc(100vh - 4rem);
     height: calc(100vh - 4rem);
   }
-}
-
-body.dark .container {
-  border: 0.5rem solid var(--main-color-border-darkmode);
 }
 
 @media (min-width: 60em) {
@@ -108,9 +99,9 @@ body.dark .container {
 }
 
 .colophon {
-  padding: 1.5rem;
+  padding: 1rem;
   padding-bottom: 2rem;
-  border-right: 1px solid rgba(0, 0, 0, 0.09);
+
   flex-direction: column;
   display: flex;
   justify-content: space-between;

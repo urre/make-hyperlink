@@ -39,13 +39,12 @@
 body.dark .alertbox {
   background-image: none;
   background-color: transparent;
-
   background-color: #1c0c29;
 }
 
-.alertbox code {
-  line-height: 1;
+body:not(.dark) .alertbox code {
   color: var(--main-color);
+  background-color: var(--bg-color);
 }
 
 body.dark .alertbox code {
