@@ -56,9 +56,10 @@ function Jsx(props) {
         Internal &lt;Link&gt; (JSX)
       </label>
       <p>
-        The primary way to allow users to navigate around your application.
-        &lt;Link&gt; will render a fully accessible anchor tag with the proper
-        href. JSX is a syntax extension to JavaScript often used with React
+        When using React Router, the primary way to allow users to navigate
+        around your application is using the &lt;Link&gt; component. It will
+        render a fully accessible anchor tag with the proper href. JSX is a
+        syntax extension to JavaScript often used with React.
       </p>
     </>
   );
