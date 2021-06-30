@@ -219,7 +219,7 @@ class App extends React.Component {
                   </svg>
                 </button>
               </nav>
-              <p>Generate a good link to use on the Internet.</p>
+              <p>Create a link to use on the Internet.</p>
             </header>
             <Footer />
           </div>
@@ -357,15 +357,11 @@ class App extends React.Component {
                   />
                   <p>
                     The class selector selects elements with a specific class
-                    attribute.
+                    attribute. Separate classes with space.
                   </p>
                 </li>
               </ul>
               <Rel useAttribute={this.setAttribute} />
-              <A11y useAttribute={this.setAttribute} />
-              <Target useAttribute={this.setAttribute} />
-              <Jsx useAttribute={this.setAttribute} />
-              <Download useAttribute={this.setAttribute} />
               <QueryString
                 useAttribute={this.setAttribute}
                 appendQueryString={this.appendQueryString}
@@ -374,6 +370,10 @@ class App extends React.Component {
                 useAttribute={this.setAttribute}
                 appendUTM={this.appendUTM}
               />
+              <Target useAttribute={this.setAttribute} />
+              <Download useAttribute={this.setAttribute} />
+              <A11y useAttribute={this.setAttribute} />
+              <Jsx useAttribute={this.setAttribute} />
             </div>
           </aside>
         </section>

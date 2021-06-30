@@ -23,6 +23,11 @@
   display: block;
 }
 
+body:not(.dark) .aside code {
+  color: var(--main-color);
+  background-color: var(--bg-color);
+}
+
 .aside p {
   font-size: 0.75rem;
   margin-top: 0;
@@ -33,7 +38,7 @@
 }
 
 body.dark .aside {
-  background-color: #191321;
+  background-color: var(--bg-color-dark);
 }
 
 .aside header {

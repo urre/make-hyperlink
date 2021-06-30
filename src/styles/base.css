@@ -9,7 +9,8 @@
 }
 
 :root {
-  --bg-color: rgb(255, 246, 245);
+  --bg-color: rgb(255, 249, 251);
+  --bg-color-dark: #271337;
   --main-color: #9e0b92;
   --main-color-darkmode: #b358ab;
   --main-color-border-darkmode: #912e88;
@@ -32,15 +33,9 @@ body {
   padding: 1rem;
 }
 
-@media (min-width: 60em) {
-  body {
-    /* padding: 2rem; */
-  }
-}
-
 body.dark {
   color: #ccc;
-  background-color: #271337;
+  background-color: var(--bg-color-dark);
 }
 
 h1 {
