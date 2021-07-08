@@ -53,7 +53,7 @@ function Jsx(props) {
             stroke="currentColor"
           ></path>
         </svg>
-        Internal &lt;Link&gt; (JSX)
+        Link (JSX)
       </label>
       <p>
         When using React Router, the primary way to allow users to navigate
