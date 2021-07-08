@@ -27,7 +27,7 @@ function Darkmode(props) {
         aria-labelledby="target-label"
       />
       <label htmlFor="darkmode" className="switch-label">
-        Dark mode
+        Dark UI
       </label>
     </>
   );
