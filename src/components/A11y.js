@@ -12,8 +12,6 @@ import {
 // usability.yale.edu/web-accessibility/articles/links#disabilities
 
 function A11y(props) {
-  const [items, setItems] = useState([]);
-
   const [arialabelOptions, ShowArialabelOptions] = useState(false);
   const [accesskeyOptions, ShowAccesskeyOptions] = useState(false);
   const [tabindexOptions, ShowTabindexOptions] = useState(false);
@@ -33,6 +31,7 @@ function A11y(props) {
       ? props.useAttribute("tabindex", tabindex)
       : props.useAttribute("tabindex", false);
   }, [
+    props,
     arialabelOptions,
     accesskeyOptions,
     tabindexOptions,
