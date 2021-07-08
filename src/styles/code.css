@@ -23,13 +23,13 @@ pre[class*="language-"] {
 }
 
 pre[class*="language-"] {
-  background-color: #733356;
-  background-image: linear-gradient(
+  background-color: #03292e;
+  /* background-image: linear-gradient(
     225deg,
     #733356 1%,
     #271337 35%,
     #02070c 100%
-  );
+  ); */
 }
 
 code {
@@ -57,7 +57,7 @@ code {
 .main pre .token.attr-value,
 .main pre .token.regex,
 .main pre .token.variable {
-  color: var(--main-color-light);
+  color: var(--main-code-color);
 }
 
 .main code[class*="language-"],

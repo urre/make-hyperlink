@@ -1,7 +1,15 @@
-# Link
+# makelink.design
+
+## Ideas
+
++ Download HTML
++ Inline styles
++ Color picker
++ Emoji picker?
 
 
-Länkar
+
+## Reading
 https://www.washington.edu/accessibility/links/
 
 

@@ -39,7 +39,7 @@
 body.dark .alertbox {
   background-image: none;
   background-color: transparent;
-  background-color: #1c0c29;
+  background-color: #03292e;
 }
 
 body:not(.dark) .alertbox code {

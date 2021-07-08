@@ -2,6 +2,10 @@ a {
   color: var(--main-color);
 }
 
+a:hover {
+  text-decoration-line: underline;
+}
+
 body.dark a {
   color: var(--main-color-darkmode);
 }

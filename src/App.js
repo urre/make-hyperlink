@@ -184,7 +184,7 @@ class App extends React.Component {
             <header>
               <nav>
                 <a href="/">
-                  <h1>Link Generator</h1>
+                  <h1>Makelink</h1>
                 </a>
                 <button
                   className="button button-tiny button-link"
