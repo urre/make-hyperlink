@@ -13,10 +13,14 @@ import {
 
 function A11y(props) {
   const [arialabelOptions, ShowArialabelOptions] = useState(false);
+  const [arialabelledbyOptions, ShowArialabelledbyOptions] = useState(false);
+  const [ariadescribedbyOptions, ShowAriadescribedbyOptions] = useState(false);
   const [accesskeyOptions, ShowAccesskeyOptions] = useState(false);
   const [tabindexOptions, ShowTabindexOptions] = useState(false);
 
   const [arialabel, SetArialabel] = useState(DEFAULT_ARIA_LABEL);
+  const [arialabelledby, SetArialabelledby] = useState(DEFAULT_ARIA_LABEL);
+  const [ariadescribedby, SetAriadescribedby] = useState(DEFAULT_ARIA_LABEL);
   const [accesskey, SetAccesskey] = useState(DEFAULT_ACCESSKEY);
   const [tabindex, SetTabindex] = useState(DEFAULT_TABINDEX);
 
@@ -24,6 +28,12 @@ function A11y(props) {
     arialabelOptions
       ? props.useAttribute("arialabel", arialabel)
       : props.useAttribute("arialabel", false);
+    arialabelledbyOptions
+      ? props.useAttribute("arialabelledby", arialabelledby)
+      : props.useAttribute("arialabelledby", false);
+    ariadescribedbyOptions
+      ? props.useAttribute("ariadescribedby", ariadescribedby)
+      : props.useAttribute("ariadescribedby", false);
     accesskeyOptions
       ? props.useAttribute("accesskey", accesskey)
       : props.useAttribute("accesskey", false);
@@ -31,11 +41,14 @@ function A11y(props) {
       ? props.useAttribute("tabindex", tabindex)
       : props.useAttribute("tabindex", false);
   }, [
-    props,
     arialabelOptions,
+    arialabelledbyOptions,
+    ariadescribedbyOptions,
     accesskeyOptions,
     tabindexOptions,
     arialabel,
+    arialabelledby,
+    ariadescribedby,
     accesskey,
     tabindex,
   ]);
@@ -92,8 +105,73 @@ function A11y(props) {
                 value={arialabel}
               />
             )}
-            <p dangerouslySetInnerHTML={addNote(notes.ariaLabel)} />
+            <p dangerouslySetInnerHTML={addNote(notes.arialabel)} />
 
+            {/* aria-labelledby */}
+            <input
+              type="checkbox"
+              id="arialabelledby"
+              name="set-arialabelledby"
+              className="switch-input"
+              onChange={() =>
+                ShowArialabelledbyOptions(
+                  (arialabelledbyOptions) => !arialabelledbyOptions
+                )
+              }
+              defaultChecked={false}
+              aria-checked={false}
+              aria-labelledby="target-arialabel"
+            />
+            <label
+              htmlFor="arialabelledby"
+              id="target-arialabelledby"
+              className="switch-label"
+            >
+              <code>aria-labelledby</code>
+            </label>
+            {arialabelledbyOptions && (
+              <input
+                type="text"
+                id="text-arialabelledby"
+                onChange={(event) => SetArialabelledby(event.target.value)}
+                value={arialabelledby}
+              />
+            )}
+            <p dangerouslySetInnerHTML={addNote(notes.arialabelledby)} />
+
+            {/* aria-describedby */}
+            <input
+              type="checkbox"
+              id="ariadescribedby"
+              name="set-ariadescribedby"
+              className="switch-input"
+              onChange={() =>
+                ShowArialabelledbyOptions(
+                  (ariadescribedbyOptions) => !ariadescribedbyOptions
+                )
+              }
+              defaultChecked={false}
+              aria-checked={false}
+              aria-labelledby="target-ariadescribedby"
+            />
+            <label
+              htmlFor="ariadescribedby"
+              id="target-ariadescribedby"
+              className="switch-label"
+            >
+              <code>aria-describedby</code>
+            </label>
+            {arialabelledbyOptions && (
+              <input
+                type="text"
+                id="text-ariadescribedby"
+                onChange={(event) => SetAriadescribedby(event.target.value)}
+                value={ariadescribedby}
+              />
+            )}
+            <p dangerouslySetInnerHTML={addNote(notes.ariadescribedby)} />
+
+            {/* tabindex */}
             <input
               type="checkbox"
               id="tabindex"
