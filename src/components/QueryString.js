@@ -6,21 +6,27 @@ function QueryString(props) {
   const [options, showOptions] = useState(false);
   const [queryKey, setQueryKey] = useState("ref");
   const [queryValue, setQueryValue] = useState("producthunt");
-  const { appendQueryString } = props;
-
-  useEffect(() => {
-    appendQueryString(options, queryKey, queryValue);
-  }, [appendQueryString, options, queryKey, queryValue]);
 
   const toggleOptions = (event) => {
     if (options) {
       showOptions(false);
     } else {
       showOptions(true);
-      props.useAttribute("querystring", true);
-      props.appendQueryString(queryKey, queryValue);
     }
   };
+
+  const handleChange = (event) => {
+    let { value, id } = event.target;
+
+    id === "querykey" && setQueryKey(value);
+    id === "queryvalue" && setQueryValue(value);
+  };
+
+  useEffect(() => {
+    options
+      ? props.appendQueryString(true, queryKey, queryValue)
+      : props.appendQueryString(false, "", "");
+  }, [options, queryKey, queryValue]);
 
   return (
     <>
@@ -29,11 +35,9 @@ function QueryString(props) {
         id="querystring"
         name="set-querystring"
         className="switch-input"
-        onChange={(event) => {
-          toggleOptions();
-        }}
         aria-checked={options}
         aria-labelledby="querystring-label"
+        onChange={(event) => toggleOptions(event)}
       />
 
       <label
@@ -55,7 +59,7 @@ function QueryString(props) {
             stroke="currentColor"
           ></path>
         </svg>
-        Query string
+        Query String
       </label>
       <p>{notes.queryString}</p>
 
@@ -64,7 +68,8 @@ function QueryString(props) {
           <input
             type="text"
             id="querykey"
-            onChange={(event) => setQueryKey(event.target.value)}
+            onChange={(event) => handleChange(event)}
+            // onChange={(event) => setQueryKey(event.target.value)}
             placeholder="Ref"
             value={queryKey}
           />
@@ -72,7 +77,8 @@ function QueryString(props) {
           <input
             type="text"
             id="queryvalue"
-            onChange={(event) => setQueryValue(event.target.value)}
+            onChange={(event) => handleChange(event)}
+            // onChange={(event) => setQueryValue(event.target.value)}
             placeholder="Identifier"
             value={queryValue}
           />
