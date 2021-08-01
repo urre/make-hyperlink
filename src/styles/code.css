@@ -80,6 +80,17 @@ code {
   letter-spacing: -0.02em;
 }
 
-.tag.token {
-  word-break: break-all;
+/* pre > code > .token.tag:first-child:after {
+  content: "\A";
+  white-space: pre;
 }
+
+pre > code > .token.tag:last-child:before {
+  content: "\A";
+  white-space: pre;
+}
+
+.attr-name:before {
+  content: "\A";
+  white-space: pre;
+} */

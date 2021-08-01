@@ -146,7 +146,7 @@ function A11y(props) {
               name="set-ariadescribedby"
               className="switch-input"
               onChange={() =>
-                ShowArialabelledbyOptions(
+                ShowAriadescribedbyOptions(
                   (ariadescribedbyOptions) => !ariadescribedbyOptions
                 )
               }

@@ -38,6 +38,7 @@ function Rel(props) {
             ></path>
           </svg>
           Rel{" "}
+          {items.length > 0 && <span className="count">{items.length}</span>}
         </summary>
         <ul>
           <li>

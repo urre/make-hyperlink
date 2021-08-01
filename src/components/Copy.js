@@ -17,6 +17,8 @@ class Copy extends React.Component {
     });
     let text = this.props.text;
 
+    console.log(text);
+
     const textField = document.createElement("textarea");
     textField.classList.add("visually-hidden");
     textField.innerText = text;

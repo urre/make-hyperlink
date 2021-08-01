@@ -5,6 +5,7 @@ import Jsx from "./components/Jsx.js";
 import Analytics from "./components/Analytics.js";
 import Download from "./components/Download.js";
 import Rel from "./components/Rel.js";
+import ReferrerPolicy from "./components/ReferrerPolicy.js";
 import A11y from "./components/A11y.js";
 import Footer from "./components/Footer.js";
 import QueryString from "./components/QueryString.js";
@@ -48,7 +49,6 @@ class App extends React.Component {
         arialabel: false,
         ariadescribedby: false,
         arialabelledby: false,
-        ariadescribedby: false,
       },
     };
   }
@@ -108,8 +108,8 @@ class App extends React.Component {
           .replace("jsx", "")}>${link.text}</${this.getTagType()}>`;
       } else {
         return `<${this.getTagType()} ${htmlAttributeValues.replace(
-          "arialabel",
-          "aria-label"
+          "aria",
+          "aria-"
         )}>${link.text}</${this.getTagType()}>`;
       }
     }
@@ -174,7 +174,10 @@ class App extends React.Component {
         notes[key] &&
         !key.includes("_")
       ) {
-        html += `<div class="alertbox"><span>${key}</span>${notes[key]}</div>`;
+        html += `<div class="alertbox"><span>${key.replace(
+          "aria",
+          "aria-"
+        )}</span>${notes[key]}</div>`;
       }
     }
 
@@ -344,9 +347,10 @@ class App extends React.Component {
                 useAttribute={this.setAttribute}
                 appendUTM={this.appendUTM}
               />
-              <Rel useAttribute={this.setAttribute} />
-              <A11y useAttribute={this.setAttribute} />
               <Jsx useAttribute={this.setAttribute} />
+              <Rel useAttribute={this.setAttribute} />
+              <ReferrerPolicy useAttribute={this.setAttribute} />
+              <A11y useAttribute={this.setAttribute} />
             </div>
           </aside>
         </section>

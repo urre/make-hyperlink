@@ -78,24 +78,24 @@ function Target(props) {
           </div>
           <ul>
             <li>
-              <code>_self</code>: Load the URL into the same browsing context as
+              <code>_self</code> Load the URL into the same browsing context as
               the current one. This is the default behavior.
             </li>
             <li>
-              <code>_blank</code>: Load the URL into a new browsing context.
-              This is usually a tab, but users can configure browsers to use new
+              <code>_blank</code> Load the URL into a new browsing context. This
+              is usually a tab, but users can configure browsers to use new
               windows instead.
             </li>
             <li>
-              <code>_parent</code>: Load the URL into the parent browsing
-              context of the current one. If there is no parent, this behaves
-              the same way as _self.
+              <code>_parent</code> Load the URL into the parent browsing context
+              of the current one. If there is no parent, this behaves the same
+              way as _self.
             </li>
             <li>
-              <code>_top</code>: Load the URL into the top-level browsing
-              context (that is, the "highest" browsing context that is an
-              ancestor of the current one, and has no parent). If there is no
-              parent, this behaves the same way as _self.
+              <code>_top</code> Load the URL into the top-level browsing context
+              (that is, the "highest" browsing context that is an ancestor of
+              the current one, and has no parent). If there is no parent, this
+              behaves the same way as _self.
             </li>
           </ul>
         </>

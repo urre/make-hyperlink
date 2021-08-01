@@ -10,7 +10,7 @@
 
 :root {
   --bg-color: rgb(193, 243, 235);
-  --bg-color-dark: rgb(2, 34, 28);
+  --bg-color-dark: #0a373d;
   --main-color: #048675;
   --main-code-color: rgb(248, 122, 181);
   --main-color-darkmode: var(--main-color);

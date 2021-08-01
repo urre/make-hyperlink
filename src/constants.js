@@ -1,14 +1,16 @@
-export const DEFAULT_ARIA_LABEL = "Read more about cats";
+export const DEFAULT_ARIA_LABEL = "Read more on Urban Sandens Website";
 export const DEFAULT_ACCESSKEY = "a";
 export const DEFAULT_TABINDEX = "1";
 
 export const notes = {
   querystring: "",
+  noreferrer:
+    "The Referer header will be omitted entirely. No referrer information is sent along with requests.",
   download:
     "Download only works for same-origin URLs, or the blob: and data: schemes.",
   text: "Use clear link wording. Link text is the clickable word or phrase in a hyperlink. When link text clearly conveys a hyperlink's target, both users and search engines can more easily understand your content and how it relates to other pages. Avoid click here, click this, go, here, this, start, right, here, more, and learn more,",
   target:
-    "When using target=_blank, add rel=\"noopener noreferrer\", to avoid exploitation of the window.opener API. The page we're linking to gains partial access to the linking page via the window.opener object. The newly opened tab can then change the window.opener.location to some phishing page. Users trust the page that is already opened, they won't get suspicious.",
+    "When using <code>target=_blank</code>, add <code>rel=\"noopener noreferrer\"</code>, to avoid exploitation of the window.opener API. The page we're linking to gains partial access to the linking page via the window.opener object. The newly opened tab can then change the window.opener.location to some phishing page. Users trust the page that is already opened, they won't get suspicious.",
   utm: "GACC allows you to append certain UTM parameters (campaign tags) to a URL pointing to a page on your site, which help identify where the links are placed within a campaign. This is incredibly useful since it can help determine where you’re getting the most traffic from, and therefore the most value for a given campaign. UTM stands for Urchin Tracking Module. These parameters are prefixed with utm_, and include source, medium, term, content, and campaign. ",
   ariadescribedby:
     "The aria-describedby attribute provides extra text for a screen reader besides the link text. To give a link an ARIA description, first give the descriptive text an id attribute. Then, give the link an aria-describedby attribute equal to the description’s id attribute. A screen reader will first read the link text, then the description. ",
