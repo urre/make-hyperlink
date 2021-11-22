@@ -29,16 +29,16 @@ body.dark .button {
 }
 
 .button:focus {
-  box-shadow: 0 0 0 3px var(--main-color-light);
+  /* box-shadow: 0 0 0 3px var(--main-color-light); */
   outline: none;
 }
 
 .button:active {
-  top: 1px;
+  /* top: 1px; */
 }
 
 .button-success {
-  background-color: var(--success);
+  /* background-color: var(--success); */
 }
 
 .button-success * {

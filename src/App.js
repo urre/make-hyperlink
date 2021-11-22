@@ -22,8 +22,8 @@ class App extends React.Component {
       theme: "light",
       sidebar: false,
       link: {
-        text: "Visit Urban Sanden's website",
-        href: "https://urre.me",
+        text: "Make a link and use on the Internet",
+        href: "https://makelink.app",
         class: "",
         target: false,
         jsx: false,
@@ -194,7 +194,7 @@ class App extends React.Component {
             <header>
               <nav>
                 <a href="/">
-                  <h1>Makelink</h1>
+                  <h1>Linkprimer</h1>
                 </a>
                 <button
                   className="button button-tiny button-link"
@@ -216,9 +216,16 @@ class App extends React.Component {
             <div className="main-html">
               <div className="main-html-header">
                 <h3>HTML Code </h3>
-                <Copy text={this.createMarkup(false)} />
               </div>
 
+              <header className="code-header">
+                <div className="code-header-control">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <Copy text={this.createMarkup(false)} />
+              </header>
               <pre className="language-markup" ref={this.copyBoxRef}>
                 <code>{this.createMarkup(false)}</code>
               </pre>
@@ -347,10 +354,10 @@ class App extends React.Component {
                 useAttribute={this.setAttribute}
                 appendUTM={this.appendUTM}
               />
-              <Jsx useAttribute={this.setAttribute} />
               <Rel useAttribute={this.setAttribute} />
               <ReferrerPolicy useAttribute={this.setAttribute} />
               <A11y useAttribute={this.setAttribute} />
+              <Jsx useAttribute={this.setAttribute} />
             </div>
           </aside>
         </section>

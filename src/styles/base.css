@@ -10,8 +10,8 @@
 
 :root {
   --bg-color: rgb(193, 243, 235);
-  --bg-color-dark: #0a373d;
-  --main-color: #048675;
+  --bg-color-dark: #212332;
+  --main-color: #6f3f9c;
   --main-code-color: rgb(248, 122, 181);
   --main-color-darkmode: var(--main-color);
   --main-color-border-darkmode: #18204e;
@@ -35,7 +35,6 @@ body {
     rgb(255, 228, 230),
     rgb(204, 251, 241)
   );
-  padding: 0.5rem;
 }
 
 body.dark {
@@ -47,7 +46,7 @@ body.dark {
 h1 {
   font-weight: 700;
   line-height: 1;
-  font-size: clamp(1rem, 9vw, 3rem);
+  font-size: clamp(1rem, 2vw, 3rem);
   margin: 0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -56,6 +55,11 @@ h1 {
     var(--main-color),
     var(--main-code-color)
   );
+}
+
+.colophon p {
+  /* margin-bottom: 0; */
+  line-height: 1.2;
 }
 
 .colophon a {
@@ -94,14 +98,14 @@ h1 {
 @media (min-width: 60em) {
   .container {
     height: 100vh;
-    grid-template-columns: 300px 3fr;
+    grid-template-columns: 300px minmax(0, 1fr);
     grid-gap: 0;
     margin-right: 420px;
   }
 }
 
 .colophon {
-  padding: 1rem;
+  padding: 2rem;
   padding-bottom: 2rem;
 
   flex-direction: column;
