@@ -26,7 +26,7 @@ const Footer = () => {
               fill="currentColor"
             ></path>
           </svg>
-          Follow me
+          Follow me on Twitter
         </a>{" "}
         <Darkmode />
       </div>

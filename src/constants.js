@@ -1,4 +1,4 @@
-export const DEFAULT_ARIA_LABEL = "Read more on Urban Sandens Website";
+export const DEFAULT_ARIA_LABEL = "Make a link and use on the Internet";
 export const DEFAULT_ACCESSKEY = "a";
 export const DEFAULT_TABINDEX = "1";
 
@@ -44,8 +44,6 @@ export const notes = {
   next: "Indicates that the page is in a sequence and the linked page is the next page in the sequence.",
   nofollow:
     "Indicates that the linked resource is not endorsed by the current document’s author.",
-  noreferrer:
-    "Tells the browser not to send an HTTP referrer header when	following the link.",
   prefetch: "The linked resource should be cached.",
   prev: "Indicates that the page is in a sequence and the linked page is the previous page in the sequence.",
   search:
@@ -53,4 +51,9 @@ export const notes = {
   tag: "A tagging term (not to be confused with HTML tags) that applies to the link.",
   queryString: "For example: /?ref=producthunt",
   jsx: "Link (JSX) with React Router. The primary way to allow users to navigate around your application. &lt;Link&gt;  will render a fully accessible anchor tag with the proper href.A &lt;Link&gt; can know when the route it links to is active and automatically apply an activeClassName and/or <code>activeStyle</code> when given either prop. The &lt;Link&gt; will be active if the current route is either the linked route or any descendant of the linked route. To have the link be active only on the exact linked route, use &lt;IndexLink> instead or set the onlyActiveOnIndex prop.",
+  rel: [
+    {
+      alternate: "An alternative version of the current web page.",
+    },
+  ],
 };

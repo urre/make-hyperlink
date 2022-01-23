@@ -46,7 +46,7 @@ body.dark {
 h1 {
   font-weight: 700;
   line-height: 1;
-  font-size: clamp(1rem, 2vw, 3rem);
+  font-size: clamp(1.5rem, 2vw, 3rem);
   margin: 0;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
