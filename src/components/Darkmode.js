@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function Darkmode(props) {
   const [Mode, toggleMode] = useState(false);
+  const [modeType] = useState("Dark");
 
   const toggleOptions = () => {
     if (Mode) {
@@ -27,7 +28,7 @@ function Darkmode(props) {
         aria-labelledby="target-label"
       />
       <label htmlFor="darkmode" className="switch-label">
-        Dark UI
+        {modeType} UI
       </label>
     </>
   );

@@ -11,5 +11,6 @@ import "./styles/code.css";
 import "./styles/buttons.css";
 import "./styles/alert.css";
 import "./styles/footer.css";
+import "./styles/header.css";
 import App from "./App";
 ReactDOM.render(<App />, document.getElementById("root"));

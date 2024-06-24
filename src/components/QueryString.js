@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import { notes } from "../constants";
 
+console.log(notes.queryString);
+
 function QueryString(props) {
   const [options, showOptions] = useState(false);
   const [queryKey, setQueryKey] = useState("ref");
@@ -61,7 +63,7 @@ function QueryString(props) {
         </svg>
         Query String
       </label>
-      <p>{notes.queryString}</p>
+      <p>{notes.querystring_example}</p>
 
       {options && (
         <>
@@ -69,7 +71,6 @@ function QueryString(props) {
             type="text"
             id="querykey"
             onChange={(event) => handleChange(event)}
-            // onChange={(event) => setQueryKey(event.target.value)}
             placeholder="Ref"
             value={queryKey}
           />
@@ -78,7 +79,6 @@ function QueryString(props) {
             type="text"
             id="queryvalue"
             onChange={(event) => handleChange(event)}
-            // onChange={(event) => setQueryValue(event.target.value)}
             placeholder="Identifier"
             value={queryValue}
           />

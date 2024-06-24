@@ -1,13 +1,14 @@
 export const DEFAULT_ARIA_LABEL = "Make a link and use on the Internet";
 export const DEFAULT_ACCESSKEY = "a";
 export const DEFAULT_TABINDEX = "1";
+export const DEFAULT_ARIA_LABEL_ID = "link-primer";
+export const DEFAULT_ARIA_DESCRIBE_ID = "link-primer";
 
 export const notes = {
-  querystring: "",
   noreferrer:
     "The Referer header will be omitted entirely. No referrer information is sent along with requests.",
   download:
-    "Download only works for same-origin URLs, or the blob: and data: schemes.",
+    "The browser will automatically detect the correct file extension and add it to the file (.img, .pdf, .txt, .html, etc.). Download only works for same-origin URLs, or the blob: and data: schemes.",
   text: "Use clear link wording. Link text is the clickable word or phrase in a hyperlink. When link text clearly conveys a hyperlink's target, both users and search engines can more easily understand your content and how it relates to other pages. Avoid click here, click this, go, here, this, start, right, here, more, and learn more,",
   target:
     "When using <code>target=_blank</code>, add <code>rel=\"noopener noreferrer\"</code>, to avoid exploitation of the window.opener API. The page we're linking to gains partial access to the linking page via the window.opener object. The newly opened tab can then change the window.opener.location to some phishing page. Users trust the page that is already opened, they won't get suspicious.",
@@ -49,11 +50,7 @@ export const notes = {
   search:
     "A search facility that can be used to search the current, and related, documents.",
   tag: "A tagging term (not to be confused with HTML tags) that applies to the link.",
-  queryString: "For example: /?ref=producthunt",
-  jsx: "Link (JSX) with React Router. The primary way to allow users to navigate around your application. &lt;Link&gt;  will render a fully accessible anchor tag with the proper href.A &lt;Link&gt; can know when the route it links to is active and automatically apply an activeClassName and/or <code>activeStyle</code> when given either prop. The &lt;Link&gt; will be active if the current route is either the linked route or any descendant of the linked route. To have the link be active only on the exact linked route, use &lt;IndexLink> instead or set the onlyActiveOnIndex prop.",
-  rel: [
-    {
-      alternate: "An alternative version of the current web page.",
-    },
-  ],
+  querystring_example: "For example: /?ref=producthunt",
+  querystring:
+    "A query string is a part of a uniform resource locator (URL) that assigns values to specified parameters. A query string commonly includes fields added to a base URL by a Web browser or other client application, for example as part of an HTML document, choosing the appearance of a page, or jumping to positions in multimedia content",
 };

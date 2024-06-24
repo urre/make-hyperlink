@@ -1,9 +1,6 @@
 a {
   color: var(--main-color);
-}
-
-a:hover {
-  text-decoration-line: underline;
+  text-decoration-line: none;
 }
 
 body.dark a {

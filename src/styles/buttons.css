@@ -5,7 +5,7 @@
   border-radius: 8px;
   padding: 0.5rem 1rem;
   display: inline-flex;
-  font-size: 0.85rem;
+  /* font-size: 0.85rem; */
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
@@ -26,19 +26,6 @@ body.dark .button {
 .button:hover * {
   stroke: white;
   color: white;
-}
-
-.button:focus {
-  /* box-shadow: 0 0 0 3px var(--main-color-light); */
-  outline: none;
-}
-
-.button:active {
-  /* top: 1px; */
-}
-
-.button-success {
-  /* background-color: var(--success); */
 }
 
 .button-success * {

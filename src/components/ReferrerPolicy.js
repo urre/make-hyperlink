@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { notes } from "../constants";
 
@@ -25,16 +25,16 @@ function ReferrerPolicy(props) {
       <details>
         <summary>
           <svg
-            viewBox="0 0 15 15"
-            fill="none"
             xmlns="http://www.w3.org/2000/svg"
             width="15"
             height="15"
             style={{ marginRight: ".5rem" }}
+            fill="none"
+            viewBox="0 0 15 15"
           >
             <path
-              d="M2.5 1.5a1 1 0 11-2 0 1 1 0 012 0zm0 0h5v12h5m0 0a1 1 0 102 0 1 1 0 00-2 0z"
               stroke="currentColor"
+              d="M13.5 7.5l-4-4m4 4l-4 4m4-4H1"
             ></path>
           </svg>
           Referrer Policy{" "}

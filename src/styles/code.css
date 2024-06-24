@@ -1,7 +1,6 @@
 code,
 pre {
-  font-family: "SF Mono", source-code-pro, Menlo, Monaco, Consolas,
-    "Courier New", monospace;
+  font-family: Menlo, monospace;
 }
 
 code[class*="language-"],
@@ -14,16 +13,16 @@ pre[class*="language-"] {
   overflow-x: auto;
   white-space: pre-line;
   hyphens: auto;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
   padding: 1.5rem;
   position: relative;
 }
 
 .code-header {
-  background-color: var(--bg-color-dark);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  background-color: #111;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,40 +39,41 @@ body.dark .code-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.code-header .button {
-  padding: 0;
-  background-color: transparent;
   color: white;
 }
 
-.code-header span {
+.code-header .button {
+  padding: 0.15rem 0.5rem 0.15rem 0.5rem;
+  background-color: transparent;
+  color: white;
+  border-radius: 1rem;
+}
+
+.code-header span.copy-label {
+  display: inline-block;
+  margin-left: 0.25rem;
+}
+
+.code-header span:not(.copy-label) {
   width: 12px;
   height: 12px;
   border-radius: 50%;
 }
 
-.code-header span:first-child {
+.code-header span:not(.copy-label):first-child {
   background-color: #ff5f57;
 }
 
-.code-header span:nth-child(2) {
+.code-header span:not(.copy-label):nth-child(2) {
   background-color: #febc2e;
 }
 
-.code-header span:nth-child(3) {
+.code-header span:not(.copy-label):nth-child(3) {
   background-color: #28c840;
 }
 
 pre[class*="language-"] {
-  /* background-color: #03292e; */
-  background-image: linear-gradient(
-    225deg,
-    #733356 1%,
-    #271337 35%,
-    #02070c 100%
-  );
+  background-color: #0e0618;
 }
 
 code {
@@ -83,26 +83,25 @@ code {
 }
 
 /* HTML */
-.main pre .token.tag,
-.main pre .token.attr-name,
-.main pre .token.namespace,
-.main pre .token.deleted {
+pre .token.tag,
+pre .token.attr-name,
+pre .token.namespace,
+pre .token.deleted {
   color: #feebc8;
 }
 
-.main pre .token.string,
-.main pre .token.char,
-.main pre .token.attr-value,
-.main pre .token.regex,
-.main pre .token.variable {
+pre .token.string,
+pre .token.char,
+pre .token.attr-value,
+pre .token.regex,
+pre .token.variable {
   color: var(--main-code-color);
 }
 
-.main code[class*="language-"],
-.main pre[class*="language-"] {
-  font-size: 1.15rem;
-  font-family: "SF Mono", Roboto-Mono, Inconsolata, Monaco, Consolas,
-    Courier New, Courier, monospace;
+code[class*="language-"],
+pre[class*="language-"] {
+  /* font-size: 1.15rem; */
+  font-family: Menlo, monospace;
   line-height: 1.5;
   color: white;
   text-shadow: none;
@@ -117,18 +116,3 @@ code {
   tab-size: 4;
   letter-spacing: -0.02em;
 }
-
-/* pre > code > .token.tag:first-child:after {
-  content: "\A";
-  white-space: pre;
-}
-
-pre > code > .token.tag:last-child:before {
-  content: "\A";
-  white-space: pre;
-}
-
-.attr-name:before {
-  content: "\A";
-  white-space: pre;
-} */

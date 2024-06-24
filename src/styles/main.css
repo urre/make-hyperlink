@@ -1,4 +1,13 @@
-.main {
+main {
+  padding: 0 2rem 2rem var(--sidebar-width);
+}
+
+.main-html {
+  padding: 2rem 2rem 0 2rem;
+  max-width: 80em;
+}
+
+/* .main {
   flex-direction: column;
   display: flex;
   justify-content: space-between;
@@ -6,10 +15,6 @@
   overflow-y: auto;
 }
 
-.main-html {
-  padding: 1.5rem;
-  max-width: 1400px;
-}
 
 .main-html-header {
   display: flex;
@@ -20,3 +25,21 @@
 .main-html-header h3 {
   margin: 0;
 }
+
+.status {
+  display: grid;
+  justify-content: end;
+  align-items: center;
+  justify-content: space-between;
+
+  grid-template-columns: 2fr minmax(0, 0.5fr);
+}
+
+.output {
+  background-color: white;
+  padding: 4rem;
+}
+
+body.dark .output {
+  background-color: black;
+} */

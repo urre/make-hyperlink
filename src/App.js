@@ -1,17 +1,18 @@
 import React from "react";
 import Prism from "prismjs";
-import Target from "./components/Target.js";
-import Jsx from "./components/Jsx.js";
-import Analytics from "./components/Analytics.js";
-import Download from "./components/Download.js";
-import Rel from "./components/Rel.js";
-import ReferrerPolicy from "./components/ReferrerPolicy.js";
-import A11y from "./components/A11y.js";
-import Footer from "./components/Footer.js";
-import QueryString from "./components/QueryString.js";
-import Copy from "./components/Copy.js";
-import CogIcon from "./components/CogIcon.js";
-import CloseIcon from "./components/CloseIcon.js";
+import Target from "./components/Target";
+
+import Analytics from "./components/Analytics";
+import { Header } from "./components/Header";
+import Download from "./components/Download";
+import Rel from "./components/Rel";
+import ReferrerPolicy from "./components/ReferrerPolicy";
+import A11y from "./components/A11y";
+
+import QueryString from "./components/QueryString";
+import Copy from "./components/Copy";
+
+import CloseIcon from "./components/CloseIcon";
 
 import { notes } from "./constants";
 
@@ -21,9 +22,10 @@ class App extends React.Component {
     this.state = {
       theme: "light",
       sidebar: false,
+      appName: "LinkPrimer",
       link: {
-        text: "Make a link and use on the Internet",
-        href: "https://makelink.app",
+        text: "This is a hyperlink, one of the pillars of the internet",
+        href: "https://linkprimer.app",
         class: "",
         target: false,
         jsx: false,
@@ -62,11 +64,11 @@ class App extends React.Component {
   }
 
   getTagType = (attributeName) => {
-    return this.state.link["jsx"] ? "Link" : "a";
+    return "a";
   };
 
   getLinkURLAttribute = () => {
-    return this.state.link["jsx"] ? "to" : "href";
+    return "href";
   };
 
   createMarkup = (useHTML) => {
@@ -80,14 +82,26 @@ class App extends React.Component {
 
     const htmlAttributeValues = htmlAttributes
       .map((value) => {
-        if (value === "href" && this.state.link["utm"]) {
+        if (
+          value === "href" &&
+          this.state.link["utm"] &&
+          !this.state.link["querystring"]
+        ) {
           return `${this.getLinkURLAttribute()}="${this.state.link["href"]}?${
             this.state.link["utm"]
           }"`;
         } else if (value === "href" && this.state.link["querystring"]) {
-          return `${this.getLinkURLAttribute()}="${this.state.link["href"]}?${
-            this.state.link["querystring_ref"]
-          }=${this.state.link["querystring_identifier"]}"`;
+          if (this.state.link["utm"]) {
+            return `${this.getLinkURLAttribute()}="${this.state.link["href"]}?${
+              this.state.link["querystring_ref"]
+            }=${this.state.link["querystring_identifier"]}&${
+              this.state.link["utm"]
+            }"`;
+          } else {
+            return `${this.getLinkURLAttribute()}="${this.state.link["href"]}?${
+              this.state.link["querystring_ref"]
+            }=${this.state.link["querystring_identifier"]}"`;
+          }
         } else if (this.state.link[value] === true) {
           return `\n${value}`;
         } else {
@@ -100,18 +114,10 @@ class App extends React.Component {
       .trim();
 
     if (!useHTML) {
-      if (this.state.link["jsx"]) {
-        return `<${this.getTagType()} ${htmlAttributeValues
-          .replace("aria", "aria-")
-          .replace("href", "to")
-          .replace("class", "className")
-          .replace("jsx", "")}>${link.text}</${this.getTagType()}>`;
-      } else {
-        return `<${this.getTagType()} ${htmlAttributeValues.replace(
-          "aria",
-          "aria-"
-        )}>${link.text}</${this.getTagType()}>`;
-      }
+      return `<${this.getTagType()} ${htmlAttributeValues.replace(
+        "aria",
+        "aria-"
+      )}>${link.text}</${this.getTagType()}>`;
     }
 
     if (useHTML) {
@@ -186,57 +192,22 @@ class App extends React.Component {
     };
   };
 
+  downloadTxtFile = () => {
+    const theHTML = this.createMarkup(true);
+    const element = document.createElement("a");
+
+    const file = new Blob([theHTML.__html], { type: "text/plain" });
+    element.href = URL.createObjectURL(file);
+    element.download = "myFile.html";
+    document.body.appendChild(element); // Required for this to work in FireFox
+    element.click();
+  };
+
   render() {
     return (
-      <main>
-        <section className="container">
-          <div className="colophon">
-            <header>
-              <nav>
-                <a href="/">
-                  <h1>Linkprimer</h1>
-                </a>
-                <button
-                  className="button button-tiny button-link"
-                  onClick={(e) => {
-                    this.setState((prevState) => ({
-                      sidebar: !prevState.sidebar,
-                    }));
-                  }}
-                >
-                  {" "}
-                  <CogIcon />
-                </button>
-              </nav>
-              <p>Create a link to use on the Internet.</p>
-            </header>
-            <Footer />
-          </div>
-          <main className="main">
-            <div className="main-html">
-              <div className="main-html-header">
-                <h3>HTML Code </h3>
-              </div>
-
-              <header className="code-header">
-                <div className="code-header-control">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-                <Copy text={this.createMarkup(false)} />
-              </header>
-              <pre className="language-markup" ref={this.copyBoxRef}>
-                <code>{this.createMarkup(false)}</code>
-              </pre>
-
-              <h3>Rendered output</h3>
-              <div dangerouslySetInnerHTML={this.createMarkup(true)} />
-
-              <h3>Notes</h3>
-              <span dangerouslySetInnerHTML={this.displayNotes()} />
-            </div>
-          </main>
+      <>
+        <Header appName={this.state.appName} />
+        <main>
           <aside className={`aside ${this.state.sidebar && "aside-active"}`}>
             <header>
               <button
@@ -357,11 +328,64 @@ class App extends React.Component {
               <Rel useAttribute={this.setAttribute} />
               <ReferrerPolicy useAttribute={this.setAttribute} />
               <A11y useAttribute={this.setAttribute} />
-              <Jsx useAttribute={this.setAttribute} />
             </div>
           </aside>
-        </section>
-      </main>
+          <div className="main-html">
+            <div className="main-html-header">
+              <h3 style={{ marginTop: 0 }}>HTML Code </h3>
+            </div>
+
+            <header className="code-header">
+              <div className="code-header-control">
+                <span></span>
+                <span></span>
+                <span></span>
+                <small>HTML</small>
+              </div>
+
+              <div style={{ display: "flex" }}>
+                <Copy text={this.createMarkup(false)} />
+                <button
+                  className="button button-tiny button-link"
+                  onClick={(e) => this.downloadTxtFile(e)}
+                >
+                  <svg
+                    style={{ marginRight: ".5rem" }}
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M13 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V9l-7-7z" />
+                    <path d="M13 3v6h6" />
+                  </svg>
+                  Export HTML
+                </button>
+              </div>
+            </header>
+            <pre className="language-markup" ref={this.copyBoxRef}>
+              <code>{this.createMarkup(false)}</code>
+            </pre>
+
+            <div className="status">
+              <h3>Output</h3>
+              <div style={{ justifySelf: "end" }}></div>
+            </div>
+
+            <div className="output">
+              <div dangerouslySetInnerHTML={this.createMarkup(true)} />
+            </div>
+
+            <h3>Notes</h3>
+            <span dangerouslySetInnerHTML={this.displayNotes()} />
+          </div>
+        </main>
+      </>
     );
   }
 }

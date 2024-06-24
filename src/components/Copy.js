@@ -17,8 +17,6 @@ class Copy extends React.Component {
     });
     let text = this.props.text;
 
-    console.log(text);
-
     const textField = document.createElement("textarea");
     textField.classList.add("visually-hidden");
     textField.innerText = text;
@@ -45,9 +43,15 @@ class Copy extends React.Component {
         } ${this.state.copied ? "button-success" : ""}`}
       >
         {this.state.copied ? (
-          <CheckIcon size="20" />
+          <>
+            <CheckIcon size="20" />
+            <span className="copy-label">Copy HTML</span>
+          </>
         ) : (
-          <ClipBoardIcon size="20" />
+          <>
+            <ClipBoardIcon size="20" />
+            <span className="copy-label">Copy HTML</span>
+          </>
         )}
       </button>
     );

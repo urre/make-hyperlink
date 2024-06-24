@@ -6,10 +6,12 @@ import {
   DEFAULT_ACCESSKEY,
   DEFAULT_TABINDEX,
   DEFAULT_ARIA_LABEL,
+  DEFAULT_ARIA_LABEL_ID,
+  DEFAULT_ARIA_DESCRIBE_ID,
 } from "../constants";
 
 /* CHECK */
-// usability.yale.edu/web-accessibility/articles/links#disabilities
+// https://usability.yale.edu/web-accessibility/articles/links#disabilities
 
 function A11y(props) {
   const [arialabelOptions, ShowArialabelOptions] = useState(false);
@@ -19,8 +21,15 @@ function A11y(props) {
   const [tabindexOptions, ShowTabindexOptions] = useState(false);
 
   const [arialabel, SetArialabel] = useState(DEFAULT_ARIA_LABEL);
-  const [arialabelledby, SetArialabelledby] = useState(DEFAULT_ARIA_LABEL);
-  const [ariadescribedby, SetAriadescribedby] = useState(DEFAULT_ARIA_LABEL);
+
+  const [arialabelledbyId, SetArialabelledbyId] = useState(
+    DEFAULT_ARIA_LABEL_ID
+  );
+
+  const [ariadescribedbyId, SetAriadescribedbyId] = useState(
+    DEFAULT_ARIA_DESCRIBE_ID
+  );
+
   const [accesskey, SetAccesskey] = useState(DEFAULT_ACCESSKEY);
   const [tabindex, SetTabindex] = useState(DEFAULT_TABINDEX);
 
@@ -29,10 +38,10 @@ function A11y(props) {
       ? props.useAttribute("arialabel", arialabel)
       : props.useAttribute("arialabel", false);
     arialabelledbyOptions
-      ? props.useAttribute("arialabelledby", arialabelledby)
+      ? props.useAttribute("arialabelledby", arialabelledbyId)
       : props.useAttribute("arialabelledby", false);
     ariadescribedbyOptions
-      ? props.useAttribute("ariadescribedby", ariadescribedby)
+      ? props.useAttribute("ariadescribedby", ariadescribedbyId)
       : props.useAttribute("ariadescribedby", false);
     accesskeyOptions
       ? props.useAttribute("accesskey", accesskey)
@@ -47,8 +56,7 @@ function A11y(props) {
     accesskeyOptions,
     tabindexOptions,
     arialabel,
-    arialabelledby,
-    ariadescribedby,
+    ariadescribedbyId,
     accesskey,
     tabindex,
   ]);
@@ -133,8 +141,8 @@ function A11y(props) {
               <input
                 type="text"
                 id="text-arialabelledby"
-                onChange={(event) => SetArialabelledby(event.target.value)}
-                value={arialabelledby}
+                onChange={(event) => SetArialabelledbyId(event.target.value)}
+                value={arialabelledbyId}
               />
             )}
             <p dangerouslySetInnerHTML={addNote(notes.arialabelledby)} />
@@ -161,12 +169,12 @@ function A11y(props) {
             >
               <code>aria-describedby</code>
             </label>
-            {arialabelledbyOptions && (
+            {ariadescribedbyOptions && (
               <input
                 type="text"
                 id="text-ariadescribedby"
-                onChange={(event) => SetAriadescribedby(event.target.value)}
-                value={ariadescribedby}
+                onChange={(event) => SetAriadescribedbyId(event.target.value)}
+                value={ariadescribedbyId}
               />
             )}
             <p dangerouslySetInnerHTML={addNote(notes.ariadescribedby)} />

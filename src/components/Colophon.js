@@ -1,7 +1,6 @@
 import React from "react";
-import Darkmode from "./Darkmode";
 
-const Footer = () => {
+export const Colophon = () => {
   return (
     <footer className="footer">
       <p>
@@ -11,7 +10,7 @@ const Footer = () => {
       <div className="footer-meta">
         <a
           href="https://twitter.com/urre"
-          className="button button-tiny button-link "
+          className="button button-tiny button-link"
         >
           <svg
             viewBox="0 0 15 15"
@@ -28,10 +27,7 @@ const Footer = () => {
           </svg>
           Follow me on Twitter
         </a>{" "}
-        <Darkmode />
       </div>
     </footer>
   );
 };
-
-export default Footer;
