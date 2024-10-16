@@ -1,24 +1,24 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
-import ChevronIcon from "./ChevronIcon";
+import ChevronIcon from "./ChevronIcon"
 
 function Target(props) {
-  const [options, showOptions] = useState(false);
+  const [options, showOptions] = useState(false)
 
   const toggleOptions = () => {
     if (options) {
-      showOptions(false);
-      props.useAttribute("target", false);
+      showOptions(false)
+      props.useAttribute("target", false)
     } else {
-      props.useAttribute("target", "_blank");
-      showOptions(true);
+      props.useAttribute("target", "_blank")
+      showOptions(true)
     }
-  };
+  }
 
   const handleChange = (event) => {
-    let { value } = event.target;
-    props.useAttribute("target", value);
-  };
+    let { value } = event.target
+    props.useAttribute("target", value)
+  }
 
   return (
     <>
@@ -28,7 +28,7 @@ function Target(props) {
         name="set-target"
         className="switch-input"
         onChange={(event) => {
-          toggleOptions();
+          toggleOptions()
         }}
         aria-checked={options}
         aria-labelledby="target-label"
@@ -67,7 +67,7 @@ function Target(props) {
 
       {options && (
         <>
-          <div className="relative">
+          <div style={{ position: "relative" }}>
             <select onChange={handleChange}>
               <option value="_blank">_blank</option>
               <option value="_self">_self</option>
@@ -101,7 +101,7 @@ function Target(props) {
         </>
       )}
     </>
-  );
+  )
 }
 
-export default Target;
+export default Target

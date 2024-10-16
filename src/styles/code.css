@@ -20,7 +20,7 @@ pre[class*="language-"] {
 }
 
 .code-header {
-  background-color: #111;
+  background-color: var(--main-code-header-color);
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
   display: flex;
@@ -30,9 +30,6 @@ pre[class*="language-"] {
   margin-top: 1rem;
 }
 
-body.dark .code-header {
-  background-color: rgba(0, 0, 0, 0.2);
-}
 
 .code-header-control {
   gap: 0.5rem;
@@ -80,6 +77,7 @@ code {
   padding: 0.5rem;
   border-radius: 0.4rem;
   line-height: 2;
+  font-size: initial;
 }
 
 /* HTML */
@@ -100,7 +98,7 @@ pre .token.variable {
 
 code[class*="language-"],
 pre[class*="language-"] {
-  /* font-size: 1.15rem; */
+  font-size: 1.15rem;
   font-family: Menlo, monospace;
   line-height: 1.5;
   color: white;

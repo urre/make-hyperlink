@@ -2,7 +2,7 @@
   overflow: hidden;
   width: 100%;
   position: fixed;
-  /* top: 0; */
+
   left: 0;
   display: none;
   background-color: white;
@@ -22,13 +22,9 @@
   display: block;
 }
 
-body:not(.dark) .aside code {
+.aside code {
   color: var(--main-color);
   background-color: var(--bg-color);
-}
-
-body.dark .aside {
-  background-color: var(--bg-color-dark);
 }
 
 .aside header {
@@ -49,8 +45,9 @@ body.dark .aside {
 }
 
 .aside-inner {
-  padding: 0 2rem 0 2rem;
+  padding: 1rem 2rem 0 2rem;
 }
+
 .count {
   color: white;
   border-radius: 50%;

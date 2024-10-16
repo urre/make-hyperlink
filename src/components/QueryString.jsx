@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import { notes } from "../constants";
 
-console.log(notes.queryString);
 
 function QueryString(props) {
   const [options, showOptions] = useState(false);

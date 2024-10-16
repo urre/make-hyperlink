@@ -1,31 +1,28 @@
-import React from "react";
-import Prism from "prismjs";
-import Target from "./components/Target";
+import Prism from "prismjs"
+import React from "react"
 
-import Analytics from "./components/Analytics";
-import { Header } from "./components/Header";
-import Download from "./components/Download";
-import Rel from "./components/Rel";
-import ReferrerPolicy from "./components/ReferrerPolicy";
-import A11y from "./components/A11y";
-
-import QueryString from "./components/QueryString";
-import Copy from "./components/Copy";
-
-import CloseIcon from "./components/CloseIcon";
-
-import { notes } from "./constants";
+import A11y from "./components/A11y"
+import Analytics from "./components/Analytics"
+import CloseIcon from "./components/CloseIcon"
+import Copy from "./components/Copy"
+import Download from "./components/Download"
+import { Header } from "./components/Header"
+import QueryString from "./components/QueryString"
+import ReferrerPolicy from "./components/ReferrerPolicy"
+import Rel from "./components/Rel"
+import Target from "./components/Target"
+import { notes } from "./constants"
 
 class App extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       theme: "light",
       sidebar: false,
-      appName: "LinkPrimer",
+      appName: "Make a Hyperlink",
       link: {
         text: "This is a hyperlink, one of the pillars of the internet",
-        href: "https://linkprimer.app",
+        href: "https://make-hyperlink.com",
         class: "",
         target: false,
         jsx: false,
@@ -52,33 +49,33 @@ class App extends React.Component {
         ariadescribedby: false,
         arialabelledby: false,
       },
-    };
+    }
   }
 
   componentDidMount() {
-    Prism.highlightAll();
+    Prism.highlightAll()
   }
 
   componentDidUpdate() {
-    Prism.highlightAll();
+    Prism.highlightAll()
   }
 
   getTagType = (attributeName) => {
-    return "a";
-  };
+    return "a"
+  }
 
   getLinkURLAttribute = () => {
-    return "href";
-  };
+    return "href"
+  }
 
   createMarkup = (useHTML) => {
-    const link = this.state.link;
+    const link = this.state.link
     const htmlAttributes = Object.keys(this.state.link).filter(
       (value, index, array) =>
         value !== "text" &&
         !value.startsWith("utm") &&
         !value.startsWith("querystring")
-    );
+    )
 
     const htmlAttributeValues = htmlAttributes
       .map((value) => {
@@ -89,89 +86,89 @@ class App extends React.Component {
         ) {
           return `${this.getLinkURLAttribute()}="${this.state.link["href"]}?${
             this.state.link["utm"]
-          }"`;
+          }"`
         } else if (value === "href" && this.state.link["querystring"]) {
           if (this.state.link["utm"]) {
             return `${this.getLinkURLAttribute()}="${this.state.link["href"]}?${
               this.state.link["querystring_ref"]
             }=${this.state.link["querystring_identifier"]}&${
               this.state.link["utm"]
-            }"`;
+            }"`
           } else {
             return `${this.getLinkURLAttribute()}="${this.state.link["href"]}?${
               this.state.link["querystring_ref"]
-            }=${this.state.link["querystring_identifier"]}"`;
+            }=${this.state.link["querystring_identifier"]}"`
           }
         } else if (this.state.link[value] === true) {
-          return `\n${value}`;
+          return `\n${value}`
         } else {
           return this.state.link[value]
             ? `${value}="${this.state.link[value]}"`
-            : "";
+            : ""
         }
       })
       .join(" ")
-      .trim();
+      .trim()
 
     if (!useHTML) {
       return `<${this.getTagType()} ${htmlAttributeValues.replace(
         "aria",
         "aria-"
-      )}>${link.text}</${this.getTagType()}>`;
+      )}>${link.text}</${this.getTagType()}>`
     }
 
     if (useHTML) {
       return {
         __html: `<a ${htmlAttributeValues}>${link.text}</a>`,
-      };
+      }
     }
-  };
+  }
 
   onChange = (event) => {
-    this.setAttribute(event.currentTarget.id, event.currentTarget.value);
-  };
+    this.setAttribute(event.currentTarget.id, event.currentTarget.value)
+  }
 
   setAttribute = (attribute, option = false) => {
-    const { link } = { ...this.state };
-    const currentState = link;
-    currentState[attribute] = option;
-    this.setState({ link: currentState });
-  };
+    const { link } = { ...this.state }
+    const currentState = link
+    currentState[attribute] = option
+    this.setState({ link: currentState })
+  }
 
   appendUTM = () => {
-    const { link } = { ...this.state };
-    const currentState = link;
+    const { link } = { ...this.state }
+    const currentState = link
 
     const utmAttributes = Object.keys(this.state.link).filter(
       (value, index, array) =>
         value.startsWith("utm_") && this.state.link[value]
-    );
+    )
 
     const utmParams = utmAttributes
       .map((value) => this.state.link[value])
-      .join("&");
+      .join("&")
 
-    currentState["utm"] = utmParams;
+    currentState["utm"] = utmParams
 
-    this.setState({ link: currentState });
-  };
+    this.setState({ link: currentState })
+  }
 
   appendQueryString = (append, ref, identifier) => {
-    const { link } = { ...this.state };
-    const currentState = link;
-    currentState["querystring"] = append ? true : false;
-    currentState["querystring_ref"] = ref;
-    currentState["querystring_identifier"] = identifier;
+    const { link } = { ...this.state }
+    const currentState = link
+    currentState["querystring"] = append ? true : false
+    currentState["querystring_ref"] = ref
+    currentState["querystring_identifier"] = identifier
 
     if (identifier !== undefined) {
       this.setState({
         link: currentState,
-      });
+      })
     }
-  };
+  }
 
   displayNotes = () => {
-    let html = "";
+    let html = ""
 
     for (const [key, value] of Object.entries(this.state.link)) {
       if (
@@ -180,42 +177,43 @@ class App extends React.Component {
         notes[key] &&
         !key.includes("_")
       ) {
-        html += `<div class="alertbox"><span>${key.replace(
-          "aria",
-          "aria-"
-        )}</span>${notes[key]}</div>`;
+        html += `<div class="alertbox"><span>${key
+          .replace("aria", "aria-")
+          .replace("querystring", "query string")}</span>${notes[key]}</div>`
       }
     }
 
     return {
       __html: html,
-    };
-  };
+    }
+  }
 
   downloadTxtFile = () => {
-    const theHTML = this.createMarkup(true);
-    const element = document.createElement("a");
+    const theHTML = this.createMarkup(true)
+    const element = document.createElement("a")
 
-    const file = new Blob([theHTML.__html], { type: "text/plain" });
-    element.href = URL.createObjectURL(file);
-    element.download = "myFile.html";
-    document.body.appendChild(element); // Required for this to work in FireFox
-    element.click();
-  };
+    const file = new Blob([theHTML.__html], { type: "text/plain" })
+    element.href = URL.createObjectURL(file)
+    element.download = "myFile.html"
+    document.body.appendChild(element) // Required for this to work in FireFox
+    element.click()
+  }
 
   render() {
     return (
       <>
         <Header appName={this.state.appName} />
         <main>
-          <aside className={`aside ${this.state.sidebar && "aside-active"}`}>
+          <aside
+            className={`aside ${this.state.sidebar ? "aside-active" : null}`}
+          >
             <header>
               <button
                 className="button button-tiny button-link button-close"
                 onClick={(e) => {
                   this.setState((prevState) => ({
                     sidebar: !prevState.sidebar,
-                  }));
+                  }))
                 }}
               >
                 <CloseIcon />
@@ -330,7 +328,7 @@ class App extends React.Component {
               <A11y useAttribute={this.setAttribute} />
             </div>
           </aside>
-          <div className="main-html">
+          <section>
             <div className="main-html-header">
               <h3 style={{ marginTop: 0 }}>HTML Code </h3>
             </div>
@@ -383,11 +381,11 @@ class App extends React.Component {
 
             <h3>Notes</h3>
             <span dangerouslySetInnerHTML={this.displayNotes()} />
-          </div>
+          </section>
         </main>
       </>
-    );
+    )
   }
 }
 
-export default App;
+export default App

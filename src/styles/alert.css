@@ -1,15 +1,18 @@
 .alertbox {
   border-radius: var(--border-radius);
   padding: 2rem;
-
+  background-color: white;
   font-weight: 500;
   margin-bottom: 1rem;
   line-height: 1.75;
   position: relative;
+  overflow-x: clip;
+
 }
 
+
 body:not(.dark) .alertbox {
-  background: rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255);
   border-radius: var(--border-radius);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3.6px);
@@ -36,28 +39,16 @@ body:not(.dark) .alertbox {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(
-    80deg,
-    var(--main-color),
-    var(--main-color-accent)
-  );
+  background-image: linear-gradient(80deg,
+      var(--main-color),
+      var(--main-color-accent));
 }
 
-body.dark .alertbox {
-  background-image: none;
-  background-color: transparent;
-  background-color: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-body:not(.dark) .alertbox code {
+.alertbox code {
   color: var(--main-color);
   background-color: var(--bg-color);
 }
 
-body.dark .alertbox code {
-  color: var(--main-color-darkmode);
-}
 
 kbd {
   border: 1px solid #aaa;
@@ -67,10 +58,4 @@ kbd {
   color: #000;
   padding: 0.1em 0.3em;
   font-family: inherit;
-}
-
-body.dark kbd {
-  background-color: #111;
-  border: 1px solid #666;
-  color: #ccc;
 }

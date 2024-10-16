@@ -1,15 +1,10 @@
-# makehtml.link
-
-https://domainr.com/makehtml.link?q=makehtml.link
+# make-hyperlink.com
 
 ## Ideas
 
-+ Download HTML
-+ Inline styles
-+ Color picker
++ Inline styles?
++ Color picker?
 + Emoji picker?
-
-
 
 ## Reading
 https://www.washington.edu/accessibility/links/

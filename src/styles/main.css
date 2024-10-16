@@ -1,45 +1,12 @@
-main {
-  padding: 0 2rem 2rem var(--sidebar-width);
-}
-
-.main-html {
-  padding: 2rem 2rem 0 2rem;
+section {
+  padding: 2vmin;
   max-width: 80em;
-}
-
-/* .main {
-  flex-direction: column;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  overflow-y: auto;
+  margin: 0 auto;
 }
 
 
-.main-html-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media (min-width: 60em) {
+  main {
+    padding-left: var(--sidebar-width);
+  }
 }
-
-.main-html-header h3 {
-  margin: 0;
-}
-
-.status {
-  display: grid;
-  justify-content: end;
-  align-items: center;
-  justify-content: space-between;
-
-  grid-template-columns: 2fr minmax(0, 0.5fr);
-}
-
-.output {
-  background-color: white;
-  padding: 4rem;
-}
-
-body.dark .output {
-  background-color: black;
-} */

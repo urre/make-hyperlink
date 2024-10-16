@@ -2,32 +2,23 @@
   "name": "link-generator",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@maji/react-prism": "^1.0.1",
-    "prismjs": "^1.17.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "^5.0.1"
+    "@vitejs/plugin-react-swc": "^3.7.0",
+    "prismjs": "^1.29.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^5.4.0",
+    "vite-plugin-svgr": "^4.2.0",
+    "vite-tsconfig-paths": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "start": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview"
   }
 }

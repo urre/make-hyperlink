@@ -2,51 +2,41 @@
   box-sizing: border-box;
 }
 
-#root {
-  height: 100%;
-  max-height: calc(100vh - 4rem);
-  height: calc(100vh - 4rem);
-}
-
 :root {
-  --bg-color: #effdfa;
-  --main-color: #056651;
-  --main-code-color: rgb(248, 122, 181);
-  --main-color-darkmode: #ddc2f6;
+  */ --bg-color: #effdfa;
+  --main-color: #9553df;
+  --main-code-color: rgb(124, 187, 251);
+  --main-code-header-color: rgb(57, 8, 110);
   --main-color-border-darkmode: #18204e;
-  --main-color-light: #48d1b3;
+  --main-color-light: #e49ff0;
   --main-color-alert: #05a598;
   --main-color-accent: #2037b9;
   --text-color: #474747;
-  --success: var(--main-code-color);
-  --sidebar-width: 400px;
+  --success-color: var(--main-code-color);
   --border-color: #ccc;
+  --sidebar-width: 400px;
   --border-radius: 16px;
 }
 
+
 html,
 body,
-#app,
-#app > div {
+#root {
   height: 100%;
 }
 
 body {
   margin: 0 auto;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-color);
   background-color: var(--bg-color);
 
   background-repeat: no-repeat;
-  background-image: radial-gradient(
-      at 80% 50%,
+  background-image: radial-gradient(at 80% 50%,
       hsla(340, 0%, 100%, 1) 0px,
-      transparent 50%
-    ),
+      transparent 50%),
     radial-gradient(at 0% 100%, hsla(20, 0%, 100%, 1) 0px, transparent 50%),
     radial-gradient(at 80% 100%, hsla(240, 0%, 100%, 1) 0px, transparent 50%),
     radial-gradient(at 0% 0%, hsla(343, 0%, 100%, 1) 0px, transparent 50%);
@@ -54,12 +44,6 @@ body {
   min-height: 100vh;
 }
 
-body.dark {
-  --bg-color: #395354;
-  --border-color: #666;
-  color: #ccc;
-  background-image: unset;
-}
 
 h1 {
   font-weight: 700;
@@ -69,11 +53,9 @@ h1 {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(
-    80deg,
-    var(--main-color),
-    var(--main-code-color)
-  );
+  background-image: linear-gradient(80deg,
+      var(--main-color),
+      var(--main-code-color));
 }
 
 .relative {
