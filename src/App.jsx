@@ -271,7 +271,7 @@ class App extends React.Component {
                     </svg>
                     Link text
                   </label>
-                  <input
+                  <textarea
                     type="text"
                     id="text"
                     defaultValue={this.state.link.text}

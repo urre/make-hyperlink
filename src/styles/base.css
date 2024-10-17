@@ -3,14 +3,18 @@
 }
 
 :root {
-  */ --bg-color: #effdfa;
+  --bg-color: #effdfa;
   --main-color: #9553df;
-  --main-code-color: rgb(124, 187, 251);
-  --main-code-header-color: rgb(57, 8, 110);
-  --main-color-border-darkmode: #18204e;
+
+  --main-code-color: rgb(246, 117, 220);
+  --main-code-header-color: rgb(26, 0, 54);
+  --main-code-bg-color: rgb(46, 9, 86);
+
+
   --main-color-light: #e49ff0;
   --main-color-alert: #05a598;
   --main-color-accent: #2037b9;
+
   --text-color: #474747;
   --success-color: var(--main-code-color);
   --border-color: #ccc;

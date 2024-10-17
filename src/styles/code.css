@@ -70,7 +70,7 @@ pre[class*="language-"] {
 }
 
 pre[class*="language-"] {
-  background-color: #0e0618;
+  background-color: var(--main-code-bg-color)
 }
 
 code {
@@ -85,7 +85,7 @@ pre .token.tag,
 pre .token.attr-name,
 pre .token.namespace,
 pre .token.deleted {
-  color: #feebc8;
+  color: #fcdfaa;
 }
 
 pre .token.string,
@@ -98,7 +98,6 @@ pre .token.variable {
 
 code[class*="language-"],
 pre[class*="language-"] {
-  font-size: 1.15rem;
   font-family: Menlo, monospace;
   line-height: 1.5;
   color: white;
