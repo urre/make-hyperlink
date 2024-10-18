@@ -1,6 +1,6 @@
+import { Analytics } from "@vercel/analytics/react"
 import Prism from "prismjs"
 import React from "react"
-
 import A11y from "./components/A11y"
 import Analytics from "./components/Analytics"
 import CloseIcon from "./components/CloseIcon"
@@ -208,6 +208,7 @@ class App extends React.Component {
   render() {
     return (
       <>
+        <Analytics />
         <Header
           appName={this.state.appName}
           toggleSidebar={this.toggleSidebar}
