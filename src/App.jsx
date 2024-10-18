@@ -2,7 +2,7 @@ import { Analytics } from "@vercel/analytics/react"
 import Prism from "prismjs"
 import React from "react"
 import A11y from "./components/A11y"
-import Analytics from "./components/Analytics"
+import Analytic from "./components/Analytic"
 import CloseIcon from "./components/CloseIcon"
 import Copy from "./components/Copy"
 import Download from "./components/Download"
@@ -317,7 +317,7 @@ class App extends React.Component {
                 useAttribute={this.setAttribute}
                 appendQueryString={this.appendQueryString}
               />
-              <Analytics
+              <Analytic
                 useAttribute={this.setAttribute}
                 appendUTM={this.appendUTM}
               />

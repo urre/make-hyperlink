@@ -1,49 +1,49 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
-import { notes } from "../constants";
+import { notes } from "../constants"
 
-function Analytics(props) {
-  const [options, showOptions] = useState(false);
-  const [source, setSource] = useState("google");
-  const [medium, setMedium] = useState("cpc");
-  const [campaign, setCampaign] = useState("spring_sale");
-  const [term, setTerm] = useState("cat+food");
-  const [content, setContent] = useState("Campaign Content");
+function Analytic(props) {
+  const [options, showOptions] = useState(false)
+  const [source, setSource] = useState("google")
+  const [medium, setMedium] = useState("cpc")
+  const [campaign, setCampaign] = useState("spring_sale")
+  const [term, setTerm] = useState("cat+food")
+  const [content, setContent] = useState("Campaign Content")
 
   const updateParams = () => {
-    props.useAttribute("utm_source", `utm_source=${source}`);
-    props.useAttribute("utm_medium", `utm_medium=${medium}`);
-    props.useAttribute("utm_campaign", `utm_campaign=${campaign}`);
-    props.useAttribute("utm_term", `utm_term=${term}`);
-    props.useAttribute("utm_content", `utm_content=${encodeURI(content)}`);
-    props.appendUTM();
-  };
+    props.useAttribute("utm_source", `utm_source=${source}`)
+    props.useAttribute("utm_medium", `utm_medium=${medium}`)
+    props.useAttribute("utm_campaign", `utm_campaign=${campaign}`)
+    props.useAttribute("utm_term", `utm_term=${term}`)
+    props.useAttribute("utm_content", `utm_content=${encodeURI(content)}`)
+    props.appendUTM()
+  }
 
   const toggleOptions = (event) => {
     if (options) {
-      showOptions(false);
-      props.useAttribute("utm", false);
+      showOptions(false)
+      props.useAttribute("utm", false)
     } else {
-      showOptions(true);
-      props.useAttribute("utm", true);
-      updateParams();
+      showOptions(true)
+      props.useAttribute("utm", true)
+      updateParams()
     }
-  };
+  }
 
   const handleChange = (event) => {
-    let { value, id } = event.target;
+    let { value, id } = event.target
 
-    id === "utm_source" && setSource(value);
-    id === "utm_medium" && setMedium(value);
-    id === "utm_campaign" && setCampaign(value);
-    id === "utm_term" && setTerm(value);
-    id === "utm_content" && setContent(value);
+    id === "utm_source" && setSource(value)
+    id === "utm_medium" && setMedium(value)
+    id === "utm_campaign" && setCampaign(value)
+    id === "utm_term" && setTerm(value)
+    id === "utm_content" && setContent(value)
 
     value.length
       ? props.useAttribute(`${id}`, `${id}=${encodeURI(value)}`)
-      : props.useAttribute(`${id}`, "");
-    props.appendUTM();
-  };
+      : props.useAttribute(`${id}`, "")
+    props.appendUTM()
+  }
 
   return (
     <>
@@ -53,7 +53,7 @@ function Analytics(props) {
         name="set-analytics"
         className="switch-input"
         onChange={(event) => {
-          toggleOptions();
+          toggleOptions()
         }}
         aria-checked={options}
         aria-labelledby="analytics-label"
@@ -131,7 +131,7 @@ function Analytics(props) {
         </>
       )}
     </>
-  );
+  )
 }
 
-export default Analytics;
+export default Analytic
