@@ -12,9 +12,9 @@ input[type="text"] {
   margin-bottom: 1rem;
   background-color: #f7f7f7;
   border-radius: var(--border-radius);
-  transition: border 300ms;
   border: none;
 }
+
 
 textarea {
   line-height: 1.5;

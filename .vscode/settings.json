@@ -1,5 +1,5 @@
 {
-  "window.title": "Link Generator",
+  "window.title": "Make HTML",
   "files.exclude": {
     "public/*.js": true,
     "public/*.js.map": true,
