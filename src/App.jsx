@@ -199,26 +199,23 @@ class App extends React.Component {
     element.click()
   }
 
+  toggleSidebar = () => {
+    this.setState((prevState) => ({
+      sidebar: !prevState.sidebar,
+    }))
+  }
+
   render() {
     return (
       <>
-        <Header appName={this.state.appName} />
+        <Header
+          appName={this.state.appName}
+          toggleSidebar={this.toggleSidebar}
+        />
         <main>
           <aside
             className={`aside ${this.state.sidebar ? "aside-active" : null}`}
           >
-            <header>
-              <button
-                className="button button-tiny button-link button-close"
-                onClick={(e) => {
-                  this.setState((prevState) => ({
-                    sidebar: !prevState.sidebar,
-                  }))
-                }}
-              >
-                <CloseIcon />
-              </button>
-            </header>
             <div className="aside-inner">
               <ul>
                 <li>

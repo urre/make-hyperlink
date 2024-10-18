@@ -3,13 +3,30 @@
   border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;
-  align-items: center;
   gap: 1rem;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
   #root>header {
+    align-items: unset;
     flex-direction: column;
 
   }
+}
+
+#root>header div {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #root>header div {
+    display: flex;
+  }
+}
+
+
+#root>header button {
+  background-color: var(--main-color);
+  color: white;
 }

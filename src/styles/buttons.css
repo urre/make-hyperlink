@@ -12,11 +12,6 @@
   position: relative;
 }
 
-body.dark .button {
-  background-color: transparent;
-  color: #ccc;
-}
-
 .button:hover {
   background-color: var(--main-color);
   color: white;
