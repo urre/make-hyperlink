@@ -139,11 +139,12 @@ body:has(.aside-active)::after {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
+  display: block;
 }
 
 @media (min-width: 768px) {
   body:has(.aside-active)::after {
-    display: block;
+    display: none;
   }
 }
 

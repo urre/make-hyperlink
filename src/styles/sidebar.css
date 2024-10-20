@@ -16,6 +16,7 @@
   .aside {
     display: block;
     display: unset;
+    top: unset;
     width: var(--sidebar-width);
 
   }
