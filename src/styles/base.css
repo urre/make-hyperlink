@@ -46,6 +46,7 @@ body {
     radial-gradient(at 0% 0%, hsla(343, 0%, 100%, 1) 0px, transparent 50%);
 
   min-height: 100vh;
+  padding: 0.5rem
 }
 
 
@@ -116,4 +117,37 @@ h1 {
   60% {
     transform: translateX(-5px);
   }
+}
+
+.controls {
+  display: flex;
+  justify-content: end;
+  padding: 1rem 0 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .controls {
+    display: none;
+  }
+}
+
+body:has(.aside-active)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media (min-width: 768px) {
+  body:has(.aside-active)::after {
+    display: block;
+  }
+}
+
+
+.controls button {
+  border: 1px solid #ccc;
 }

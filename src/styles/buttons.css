@@ -10,6 +10,8 @@
   cursor: pointer;
   transition: background-color 300ms ease, transform 200ms;
   position: relative;
+
+  gap: 0.5rem
 }
 
 .button:hover {

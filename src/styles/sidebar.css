@@ -1,10 +1,10 @@
 .aside {
   overflow: hidden;
-  width: 100%;
+  width: 90%;
   position: fixed;
   z-index: 1;
   left: 0;
-  /* top: 0; */
+  top: 0;
   display: none;
   background-color: white;
   overflow-y: auto;
@@ -15,7 +15,9 @@
 @media (min-width: 768px) {
   .aside {
     display: block;
+    display: unset;
     width: var(--sidebar-width);
+
   }
 }
 

@@ -4,6 +4,7 @@ import React from "react"
 import A11y from "./components/A11y"
 import Analytic from "./components/Analytic"
 import CloseIcon from "./components/CloseIcon"
+import CogIcon from "./components/CogIcon"
 import Copy from "./components/Copy"
 import Download from "./components/Download"
 import { Header } from "./components/Header"
@@ -209,15 +210,24 @@ class App extends React.Component {
     return (
       <>
         <Analytics />
-        <Header
-          appName={this.state.appName}
-          toggleSidebar={this.toggleSidebar}
-        />
+        <Header appName={this.state.appName} />
         <main>
+          <div className="controls">
+            <button className="button" onClick={this.toggleSidebar}>
+              <CogIcon />
+              Open controls
+            </button>
+          </div>
           <aside
             className={`aside ${this.state.sidebar ? "aside-active" : null}`}
           >
             <div className="aside-inner">
+              <div className="controls">
+                <button className="button" onClick={this.toggleSidebar}>
+                  <CogIcon />
+                  Close controls
+                </button>
+              </div>
               <ul>
                 <li>
                   <label htmlFor="href">
