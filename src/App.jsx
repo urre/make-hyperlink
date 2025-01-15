@@ -206,6 +206,20 @@ class App extends React.Component {
     }))
   }
 
+  handleKeyDown = (event) => {
+    if (event.key === "Escape") {
+      this.toggleSidebar()
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleKeyDown)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyDown)
+  }
+
   render() {
     return (
       <>

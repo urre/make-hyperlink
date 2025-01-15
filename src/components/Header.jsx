@@ -8,7 +8,7 @@ export const Header = ({ appName, toggleSidebar }) => (
       </a>
     </nav>
     <span>
-      A small project by <a href="https://x.com/urre">Urban Sandén</a>
+      by <a href="https://x.com/urre">Urban Sandén</a>
     </span>
   </header>
 )

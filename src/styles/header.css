@@ -5,14 +5,13 @@
   justify-content: space-between;
   gap: 1rem;
   align-items: center;
-}
-
-@media (max-width: 768px) {
-  #root>header {
-    align-items: unset;
-    flex-direction: column;
-
-  }
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  height: 57px;
+  top: 0;
+  left: 0;
+  background-color: white;
 }
 
 #root>header div {
