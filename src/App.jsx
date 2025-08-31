@@ -22,7 +22,7 @@ class App extends React.Component {
       sidebar: false,
       appName: "Make a Hyperlink",
       link: {
-        text: "This is a hyperlink, one of the pillars of the internet",
+        text: "This is a hyperlink, a foundational concept behind the Web",
         href: "https://make-hyperlink.com",
         class: "",
         target: false,
