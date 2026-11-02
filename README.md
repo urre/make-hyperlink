@@ -1,4 +1,4 @@
-# make-hyperlink.com
+# Make a Hyperlink
 
 ## Create a hyperlink
 
@@ -15,11 +15,9 @@ Then open http://localhost:5173.
 
 ## Deployment
 
-Hosted on GitHub Pages. Every push to `main` runs
-[.github/workflows/deploy.yml](.github/workflows/deploy.yml), which builds the
-site with Vite and publishes `dist/`.
+Hosted on GitHub Pages at <https://urre.github.io/make-hyperlink/>. Every push
+to `main` runs [.github/workflows/deploy.yml](.github/workflows/deploy.yml),
+which builds the site with Vite and publishes `dist/`.
 
-One-time setup: in the repository's **Settings → Pages**, set *Source* to
-**GitHub Actions**. The custom domain `make-hyperlink.com` comes from
-[public/CNAME](public/CNAME) and needs DNS pointing at GitHub Pages
-(`A` records to GitHub's Pages IPs, or a `CNAME` to `urre.github.io`).
+Because the site lives under a sub path, `base` in
+[vite.config.ts](vite.config.ts) is `/make-hyperlink/`.
