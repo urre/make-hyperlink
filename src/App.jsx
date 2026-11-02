@@ -1,4 +1,3 @@
-import { Analytics } from "@vercel/analytics/react"
 import Prism from "prismjs"
 import React from "react"
 import A11y from "./components/A11y"
@@ -223,7 +222,6 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Analytics />
         <Header appName={this.state.appName} />
         <main>
           <div className="controls">
